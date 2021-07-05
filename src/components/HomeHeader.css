@@ -1,0 +1,14 @@
+.home__header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid rgb(213, 210, 210);
+}
+
+.header__logo {
+    padding-top: 5px;
+    height: 40px;
+    object-fit: contain;
+}
+

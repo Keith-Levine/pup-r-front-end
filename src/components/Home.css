@@ -1,0 +1,12 @@
+.home__buttons {
+    position: fixed;
+    top: 25vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.show__page {
+    display: flex;
+    max-height: 400 px;
+}

@@ -7,7 +7,9 @@ import {
   // Link
 } from "react-router-dom";
 import DogCards from './components/DogCards';
-import Buttons from './components/Buttons'
+import Buttons from './components/Buttons';
+import Home from './components/Home';
+import HomeHeader from './components/HomeHeader';
 import './App.css';
 
 function App() {
@@ -15,14 +17,18 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
-          <Route path='/chat'>
-            <Header />
-            <h1>chat page</h1>
-          </Route>
-          <Route path='/'>
+          <Route path='/demo'>
             <Header />
             <DogCards />
             <Buttons />
+          </Route>
+          <Route path='/chat'>
+            <Header backButton='/'/>
+            <h1>chat page</h1>
+          </Route>
+          <Route path='/'>
+            <HomeHeader />
+            <Home />
           </Route>
         </Switch>
       </Router>
