@@ -1,18 +1,24 @@
-import React, {useState} from 'react';
+import React, { useState, useEffect } from 'react';
 import TinderCard from 'react-tinder-card';
+import database from './firebase';
 import './DogCards.css'
 
+
+
 function DogCards() {
-    const [dogs, setDogs] = useState([
-        {
-            name: 'Keith',
-            url: 'https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/other/dog_cool_summer_slideshow/1800x1200_dog_cool_summer_other.jpg'
-        },
-        {
-            name: 'cami',
-            url: 'https://www.humanesociety.org/sites/default/files/styles/1240x698/public/2018/08/puppy-410265.jpg?h=0c7c9985&itok=ZQixcJRY'
+    const [dogs, setDogs] = useState([]);
+
+    useEffect(() => {
+        const unsubscribe = database
+            .collection('dogs')
+            .onSnapshot(snapshot => (
+                setDogs(snapshot.docs.map(doc => doc.data()))
+            ));
+
+        return () => {
+            unsubscribe();
         }
-    ]);
+    }, []);
 
     return (
         <div>

@@ -7,19 +7,22 @@ import {
   // Link
 } from "react-router-dom";
 import DogCards from './components/DogCards';
+import Buttons from './components/Buttons'
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <Header />
       <Router>
         <Switch>
           <Route path='/chat'>
-
+            <Header />
+            <h1>chat page</h1>
           </Route>
           <Route path='/'>
+            <Header />
             <DogCards />
+            <Buttons />
           </Route>
         </Switch>
       </Router>
