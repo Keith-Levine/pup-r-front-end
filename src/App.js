@@ -1,11 +1,12 @@
 import React from 'react';
-import Header from "./components/Header"
+import Header from "./components/Header";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   // Link
 } from "react-router-dom";
+import DogCards from './components/DogCards';
 import './App.css';
 
 function App() {
@@ -18,7 +19,7 @@ function App() {
 
           </Route>
           <Route path='/'>
-
+            <DogCards />
           </Route>
         </Switch>
       </Router>
