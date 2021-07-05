@@ -1,19 +1,33 @@
 import React from 'react'
 import "./Header.css"
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
-import PetsIcon from '@material-ui/icons/Pets';
+// import PetsIcon from '@material-ui/icons/Pets';
+import ForumIcon from '@material-ui/icons/Forum';
 import IconButton from '@material-ui/core/IconButton';
-import { Link } from 'react-router-dom'
+import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos'
+import { Link, useHistory } from 'react-router-dom'
 
-export default function Header() {
+export default function Header({ backButton }) {
+    const history = useHistory();
     return (
         <div className='header'>
-            <IconButton>
-            <AccountCircleIcon 
-                fontSize='large' 
-                className='header__icon'
-            />
-            </IconButton>
+            {backButton ? (
+                <IconButton 
+                onClick={() => history.replace(backButton)}>
+                <ArrowBackIosIcon 
+                    fontSize='large' 
+                    className='header__icon' 
+                />
+                </IconButton>
+            ): (
+                <IconButton>
+                    <AccountCircleIcon 
+                        fontSize='large' 
+                        className='header__icon'
+                    />
+                </IconButton>
+            )}
+            
             <Link to='/'>
             <img 
                 className='header__logo'
@@ -21,9 +35,9 @@ export default function Header() {
                 alt='dog' 
             />
             </Link>
-            <Link to='/chat'>
+            <Link to='/chatDemo'>
             <IconButton>
-            <PetsIcon 
+            <ForumIcon 
                 fontSize='large'
                 className='header__icon'
             />

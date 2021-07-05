@@ -12,6 +12,8 @@ import Home from './components/Home';
 import HomeHeader from './components/HomeHeader';
 import Register from './components/Register'
 import LogIn from './components/LogIn';
+import Conversations from './components/Conversations';
+import ChatScreen from './components/ChatScreen'
 import './App.css';
 
 function App() {
@@ -24,9 +26,13 @@ function App() {
             <DogCards />
             <Buttons />
           </Route>
-          <Route path='/chat'>
-            <Header backButton='/'/>
-            <h1>chat page</h1>
+          <Route path='/chatDemo/:person'>
+            <Header backButton='/chatDemo'/>
+            <ChatScreen />
+          </Route>
+          <Route path='/chatDemo'>
+            <Header backButton='/demo'/>
+            <Conversations />
           </Route>
           <Route path='/register'>
             <HomeHeader />
