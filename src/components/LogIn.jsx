@@ -3,8 +3,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
-import './Register.css'
-
 const useStyles = makeStyles((theme) => ({
     root: {
       '& > *': {
@@ -14,10 +12,10 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 
-function Register() {
+function LogIn() {
     const classes = useStyles();
     return (
-        <div className='register'>
+        <div>
             <form 
                 className={classes.root} 
                 noValidate 
@@ -26,11 +24,6 @@ function Register() {
                 <TextField 
                     id="outlined-basic" 
                     label="username" 
-                    variant="outlined" 
-                />
-                <TextField 
-                    id="outlined-basic" 
-                    label="email" 
                     variant="outlined" 
                 />
                 <TextField 
@@ -49,4 +42,4 @@ function Register() {
     )
 }
 
-export default Register
+export default LogIn
