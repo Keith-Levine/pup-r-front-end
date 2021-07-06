@@ -2,9 +2,9 @@ import React from 'react'
 import { Avatar } from '@material-ui/core'
 import { Link } from 'react-router-dom'
 
-import './Chat.css'
+import './ChatDemo.css'
 
-function Chat({ name, message, profilePic, dogPic, timestamp}) {
+function ChatDemo({ name, message, profilePic, dogPic, timestamp}) {
     return (
         <Link to={`/chatDemo/${name}`}>
         <div className='chat'>
@@ -26,4 +26,4 @@ function Chat({ name, message, profilePic, dogPic, timestamp}) {
     )
 }
 
-export default Chat
+export default ChatDemo
