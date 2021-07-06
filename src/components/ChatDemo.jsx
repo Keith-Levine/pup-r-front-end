@@ -2,7 +2,7 @@ import React from 'react'
 import { Avatar } from '@material-ui/core'
 import { Link } from 'react-router-dom'
 
-import './Chat.css'
+import './ChatDemo.css'
 
 function Chat({ name, message, profilePic, dogPic, timestamp}) {
     return (
