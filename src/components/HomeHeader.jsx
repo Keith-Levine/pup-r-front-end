@@ -1,5 +1,6 @@
 import React from 'react'
 import "./HomeHeader.css"
+import { Link } from 'react-router-dom'
 // import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 // import PetsIcon from '@material-ui/icons/Pets';
 // import IconButton from '@material-ui/core/IconButton';
@@ -8,11 +9,13 @@ import "./HomeHeader.css"
 export default function HomeHeader() {
     return (
         <div className='home__header'>
+            <Link to='/'>
             <img 
                 className='header__logo'
                 src='https://www.clipartmax.com/png/full/314-3140606_puppy-labrador-retriever-french-bulldog-silhouette-dog-logos-transparent.png' 
                 alt='dog' 
             />
+            </Link>
             <h3>Welcome to Pup-r</h3>
         </div>
     )
