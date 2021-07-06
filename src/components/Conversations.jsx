@@ -5,12 +5,11 @@ import './Conversations.css'
 function Conversations() {
     return (
         <div className='conversations'>
-            <ChatDemo 
-                name='Haley & Atlas'
-                message="You're dog is too Cute!"
+            <ChatDemo
+                name='Mark'
+                message='Yo'
                 timestamp='just now'
-                dogPic='https://i.imgur.com/NofaRy8.jpg'
-                profilePic='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbtnTcfzD1zMtyOuNPMRTGPNZcFbHOD5VhMQ&usqp=CAU'
+                profilePic='https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg'
             />
             <ChatDemo
                 name='Anna & Cooper'
