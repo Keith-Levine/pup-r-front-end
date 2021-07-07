@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 
 import './ChatDemo.css'
 
+
 function ChatDemo({ name, message, profilePic, dogPic, timestamp}) {
     return (
         <Link to={`/chatDemo/${name}`}>
@@ -26,4 +27,6 @@ function ChatDemo({ name, message, profilePic, dogPic, timestamp}) {
     )
 }
 
+
 export default ChatDemo
+
