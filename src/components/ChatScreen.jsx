@@ -5,7 +5,7 @@ import './ChatScreen.css';
 function ChatScreen() {
     const [messages, setMessages] = useState([
         {
-            name: 'Haley & Atlas',
+            name: 'Haley & Cooper',
             dogPic: 'https://i.imgur.com/NofaRy8.jpg',
             image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbtnTcfzD1zMtyOuNPMRTGPNZcFbHOD5VhMQ&usqp=CAU',
             message: `Hey!`
