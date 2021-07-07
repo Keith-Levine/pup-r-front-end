@@ -4,13 +4,18 @@ import { Link } from 'react-router-dom'
 
 import './ChatDemo.css'
 
-function Chat({ name, message, profilePic, timestamp}) {
+
+function ChatDemo({ name, message, profilePic, dogPic, timestamp}) {
     return (
         <Link to={`/chatDemo/${name}`}>
         <div className='chat'>
             <Avatar 
                 className='chat__image' 
                 src={profilePic}
+            />
+            <Avatar 
+                className='chat__image' 
+                src={dogPic}
             />
             <div className='chat__details'>
                 <h2>{name}</h2>
@@ -22,4 +27,6 @@ function Chat({ name, message, profilePic, timestamp}) {
     )
 }
 
-export default Chat
+
+export default ChatDemo
+

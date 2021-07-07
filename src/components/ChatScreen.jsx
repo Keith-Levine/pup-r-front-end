@@ -3,27 +3,35 @@ import { Avatar } from '@material-ui/core';
 import './ChatScreen.css';
 
 function ChatScreen() {
+    const [input, setInput] = useState('')
     const [messages, setMessages] = useState([
         {
             name: 'Haley & Atlas',
-            dog: 'https://i.imgur.com/NofaRy8.jpg',
+            dogPic: 'https://i.imgur.com/NofaRy8.jpg',
             image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbtnTcfzD1zMtyOuNPMRTGPNZcFbHOD5VhMQ&usqp=CAU',
             message: `Hey!`
         },
         {
-            name: 'Haley & Atlas',
-            dog: 'https://i.imgur.com/NofaRy8.jpg',
+            name: 'Mark',
+            dogPic: 'https://i.imgur.com/NofaRy8.jpg',
             image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbtnTcfzD1zMtyOuNPMRTGPNZcFbHOD5VhMQ&usqp=CAU',
             message: `How's it going`
         },
         {
-            message: `You're dog is too Cute!`
+            message: `You're dog is too cute!`
         }
     ]) 
 
+    const handleSend = e => {
+        e.preventDefault()
+
+        setMessages([...messages, { message:input }]);
+        setInput('');
+    }
+
     return (
         <div className='chatScreen'>
-            <p className='chatScreen__timestamp'>You matched with Haley & Atlas on 04/28/20</p>
+            <p className='chatScreen__timestamp'>You matched with Haley & Atlas on 07/14/22</p>
             {messages.map(message => (
                 message.name ? (
                 <div className='chatScreen__message'>
@@ -35,7 +43,7 @@ function ChatScreen() {
                 <Avatar
                     className='chatScreen__image'
                     alt={message.name}
-                    src={message.dog}
+                    src={message.dogPic}
                 />
                     <p className='chatScreen__text'>{message.message}</p>
                 </div>  
@@ -49,11 +57,16 @@ function ChatScreen() {
 
                 <form className='chatScreen__input'>
                     <input 
+                        value={input}
+                        onChange={(e) => setInput(e.target.value)}
                         className='chatScreen__inputField'
                         type='text' 
                         placeholder='Type message here...'
                     />
-                    <button className='chatScreen__inputButton'>Send</button>
+                    <button 
+                    type='submit'
+                    onClick={handleSend}
+                    className='chatScreen__inputButton'>Send</button>
                 </form>
 
         </div>
