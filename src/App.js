@@ -14,6 +14,7 @@ import Register from './components/Register'
 import LogIn from './components/LogIn';
 import Conversations from './components/Conversations';
 import ChatScreen from './components/ChatScreen'
+import CreateDog from './components/CreateDog';
 import './App.css';
 
 function App() {
@@ -40,6 +41,7 @@ function App() {
           </Route>
           <Route path='/logIn'>
             <HomeHeader />
+            <CreateDog />
             <LogIn />
           </Route>
           <Route path='/'>
