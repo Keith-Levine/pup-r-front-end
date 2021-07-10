@@ -7,6 +7,7 @@ import IconButton from '@material-ui/core/IconButton';
 import './Buttons.css'
 
 function Buttons() {
+
     return (
         <div className='buttons'>
             <IconButton className='buttons__replay'>
@@ -19,7 +20,9 @@ function Buttons() {
                     fontSize='large' 
                 />
             </IconButton>
-            <IconButton className='buttons__notInterested'>
+            <IconButton 
+                className='buttons__notInterested'
+            >
                 <NotInterestedIcon 
                     fontSize='large' 
                 />

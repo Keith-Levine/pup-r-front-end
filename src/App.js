@@ -14,6 +14,8 @@ import Register from './components/Register'
 import LogIn from './components/LogIn';
 import Conversations from './components/Conversations';
 import ChatScreen from './components/ChatScreen'
+import AllUsers from './components/AllUsers';
+import Profile from './components/Profile'
 import './App.css';
 
 function App() {
@@ -34,9 +36,17 @@ function App() {
             <Header backButton='/demo'/>
             <Conversations />
           </Route>
-          <Route path='/register'>
+          <Route path='/registerUser'>
             <HomeHeader />
             <Register />
+          </Route>
+          <Route path='/allUsers'>
+            <HomeHeader />
+            <AllUsers />
+          </Route>
+          <Route path='/allUsers/:personName'>
+            <HomeHeader />
+            <Profile />
           </Route>
           <Route path='/logIn'>
             <HomeHeader />

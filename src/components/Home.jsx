@@ -15,12 +15,12 @@ function Home() {
                     size="large"
                 >Demo</Button>
             </Link>
-            <Link to='/register'>
+            <Link to='/registerUser'>
                 <Button 
                     variant="contained" 
                     color="primary"
                     size="large"
-                >Register</Button>
+                >Register User</Button>
             </Link>
             <Link to='/logIn'>
                 <Button 
