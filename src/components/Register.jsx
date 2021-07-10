@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import database from "./firebase";
 import 'firebase/firestore';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+import './Register.css'
 
 class Register extends Component {
     constructor(props) {
@@ -49,11 +52,12 @@ class Register extends Component {
   
     render() {
       return (
-        <div>
+        <div className="registerInputs">
           <form onSubmit={this.handleSubmit}>
             <label htmlFor="personName">
-              Person Name
-              <input 
+              <TextField  
+                label="Name" 
+                variant="outlined"
                 type="text"
                 id="personName"
                 value={this.state.personName}
@@ -61,8 +65,9 @@ class Register extends Component {
               />
             </label>
             <label htmlFor="profileURL">
-              Person Image URL
-              <input 
+              <TextField 
+                label="Profile Image URL" 
+                variant="outlined"
                 type="text"
                 id="profileURL"
                 value={this.state.profileURL}
@@ -70,8 +75,9 @@ class Register extends Component {
               />
             </label>
             <label htmlFor="dogName">
-              Dog Name
-              <input 
+              <TextField 
+                label="Dog Name" 
+                variant="outlined"
                 type="text"
                 id="dogName"
                 value={this.state.dogName}
@@ -79,15 +85,21 @@ class Register extends Component {
               />
             </label>
             <label htmlFor="dogImageURL">
-              Dog Image URL
-              <input 
+              <TextField 
+                label="Dog Image URL" 
+                variant="outlined"
                 type="text"
                 id="dogImageURL"
                 value={this.state.dogImageURL}
                 onChange={(e) => this.handleChange(e)}
               />
             </label>
-            <input type="submit" />
+            <Button 
+                variant="contained" 
+                color="secondary"
+                type="submit">
+                    Submit
+            </Button>
           </form>
         </div>
       )
