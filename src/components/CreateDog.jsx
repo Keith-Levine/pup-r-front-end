@@ -24,7 +24,7 @@ class CreateDog extends Component {
         url: this.state.url,
       };
   
-      database.collection('dogs').create(data)
+      database.collection('dogs').add(data)
       .then(() => {
         console.log("Created new item successfully!");
         this.setState({

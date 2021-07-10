@@ -1,52 +1,98 @@
-import React from 'react'
-import { makeStyles } from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
+import React, { Component } from "react";
+import database from "./firebase";
+import 'firebase/firestore';
 
-import './Register.css'
-
-const useStyles = makeStyles((theme) => ({
-    root: {
-      '& > *': {
-        margin: theme.spacing(1),
-        width: '25ch',
-      },
-    },
-  }));
-
-function Register() {
-    const classes = useStyles();
-    return (
-        <div className='register'>
-            <form 
-                className={classes.root} 
-                noValidate 
-                autoComplete="off"
-            >
-                <TextField 
-                    id="outlined-basic" 
-                    label="username" 
-                    variant="outlined" 
-                />
-                <TextField 
-                    id="outlined-basic" 
-                    label="email" 
-                    variant="outlined" 
-                />
-                <TextField 
-                    id="outlined-basic" 
-                    label="password" 
-                    variant="outlined" 
-                />
-                <br></br>
-                <Button 
-                    variant="contained" 
-                    color="secondary">
-                    Submit
-                </Button>
-            </form>
+class Register extends Component {
+    constructor(props) {
+      super(props)
+      this.state = {
+        personName: '',
+        profileURL: '',
+        dogName: '',
+        dogImageURL: '',
+      }
+      this.handleSubmit = this.handleSubmit.bind(this);
+    }
+  
+    handleChange(e) {
+      this.setState({ [e.currentTarget.id]: e.currentTarget.value})
+    }
+  
+    handleSubmit(e) {
+      e.preventDefault();
+      
+      let data = {
+        personName: this.state.personName,
+        profileURL: this.state.profileURL,
+        dogName: this.state.dogName,
+        dogImageURL: this.state.dogImageURL,
+      };
+  
+      database.collection('users').add(data)
+      .then(() => {
+        console.log("Created new item successfully!");
+        this.setState({
+          submitted: true,
+        });
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  
+      this.setState({
+        personName: '',
+        profileURL: '',
+        dogName: '',
+        dogImageURL: '',
+      })
+    }
+  
+    render() {
+      return (
+        <div>
+          <form onSubmit={this.handleSubmit}>
+            <label htmlFor="personName">
+              Person Name
+              <input 
+                type="text"
+                id="personName"
+                value={this.state.personName}
+                onChange={(e) => this.handleChange(e)}
+              />
+            </label>
+            <label htmlFor="profileURL">
+              Person Image URL
+              <input 
+                type="text"
+                id="profileURL"
+                value={this.state.profileURL}
+                onChange={(e) => this.handleChange(e)}
+              />
+            </label>
+            <label htmlFor="dogName">
+              Dog Name
+              <input 
+                type="text"
+                id="dogName"
+                value={this.state.dogName}
+                onChange={(e) => this.handleChange(e)}
+              />
+            </label>
+            <label htmlFor="dogImageURL">
+              Dog Image URL
+              <input 
+                type="text"
+                id="dogImageURL"
+                value={this.state.dogImageURL}
+                onChange={(e) => this.handleChange(e)}
+              />
+            </label>
+            <input type="submit" />
+          </form>
         </div>
-    )
-}
-
-export default Register
+      )
+    }
+  }
+  
+  
+  export default Register;

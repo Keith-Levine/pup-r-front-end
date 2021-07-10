@@ -35,7 +35,7 @@ function App() {
             <Header backButton='/demo'/>
             <Conversations />
           </Route>
-          <Route path='/register'>
+          <Route path='/registerUser'>
             <HomeHeader />
             <Register />
           </Route>
