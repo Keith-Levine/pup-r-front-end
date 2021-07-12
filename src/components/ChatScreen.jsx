@@ -12,7 +12,7 @@ function ChatScreen() {
             message: `Hey!`
         },
         {
-            name: 'Mark',
+            name: 'Haley & Cooper',
             dogPic: 'https://i.imgur.com/NofaRy8.jpg',
             image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbtnTcfzD1zMtyOuNPMRTGPNZcFbHOD5VhMQ&usqp=CAU',
             message: `How's it going`

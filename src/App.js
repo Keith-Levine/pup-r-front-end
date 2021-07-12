@@ -13,6 +13,7 @@ import Register from './components/Register'
 import LogIn from './components/LogIn';
 import Conversations from './components/Conversations';
 import ChatScreen from './components/ChatScreen'
+import ProfileDemo from './components/ProfileDemo'
 import './App.css';
 
 function App() {
@@ -23,6 +24,10 @@ function App() {
           <Route path='/demo'>
             <Header />
             <DogCards />
+          </Route>
+          <Route path='/profileDemo'>
+            <Header/>
+            <ProfileDemo />
           </Route>
           <Route path='/chatDemo/:person'>
             <Header backButton='/chatDemo'/>
