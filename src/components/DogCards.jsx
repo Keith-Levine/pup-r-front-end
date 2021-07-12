@@ -2,6 +2,10 @@ import React, { useState, useEffect } from 'react';
 import TinderCard from 'react-tinder-card';
 import database from './firebase';
 import './DogCards.css'
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import NotInterestedIcon from '@material-ui/icons/NotInterested';
+import ReplayIcon from '@material-ui/icons/Replay';
+import IconButton from '@material-ui/core/IconButton';
 
 
 
@@ -38,6 +42,23 @@ function DogCards() {
                 </TinderCard>
             ))}
             </div>
+            <div className='buttons'>
+            <IconButton className='buttons__replay'>
+                <ReplayIcon 
+                    fontSize='large' 
+                /> 
+            </IconButton>
+            <IconButton className='buttons__favorite'>
+                <FavoriteIcon 
+                    fontSize='large' 
+                />
+            </IconButton>
+            <IconButton className='buttons__notInterested'>
+                <NotInterestedIcon 
+                    fontSize='large' 
+                />
+            </IconButton>
+        </div>
         </div>
     )
 }
