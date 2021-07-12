@@ -16,23 +16,27 @@ function ChatScreen() {
 
     return (
         <div className='profileScreen'>
-            <div className='profilePerson'>
-                <TextField id="outlined-basic" variant="outlined" />
-                <h2>{profile.name}</h2>
-                <img
-                    className='profilePerson__image'
-                    alt={profile.name}
-                    src={profile.image}
-                />
-            </div>
-            <div className='profileDog'>
-            <h2>{profile.dogName}</h2>
-                <img
-                    className='profileDog__image'
-                    alt={profile.dogName}
-                    src={profile.dogImage}
-                />
-            </div>
+            <form>
+                <div className='profilePerson'>
+                    
+                    
+                    <h2>Name:</h2>
+                    <TextField id="outlined-basic" variant="outlined" />
+                    <img
+                        className='profilePerson__image'
+                        alt={profile.name}
+                        src={profile.image}
+                    />
+                </div>
+                <div className='profileDog'>
+                <h2>Dog's Name:</h2>
+                    <img
+                        className='profileDog__image'
+                        alt={profile.dogName}
+                        src={profile.dogImage}
+                    />
+                </div>
+            </form>
         </div>
     )
 }
