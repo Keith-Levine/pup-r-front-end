@@ -7,7 +7,6 @@ import {
   // Link
 } from "react-router-dom";
 import DogCards from './components/DogCards';
-import Buttons from './components/Buttons';
 import Home from './components/Home';
 import HomeHeader from './components/HomeHeader';
 import Register from './components/Register'
@@ -24,7 +23,6 @@ function App() {
           <Route path='/demo'>
             <Header />
             <DogCards />
-            <Buttons />
           </Route>
           <Route path='/chatDemo/:person'>
             <Header backButton='/chatDemo'/>
