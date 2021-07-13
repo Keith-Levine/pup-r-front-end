@@ -43,18 +43,18 @@ function DogCards() {
             ))}
             </div>
             <div className='buttons'>
-            <IconButton className='buttons__replay'>
+            {/* <IconButton className='buttons__replay'>
                 <ReplayIcon 
                     fontSize='large' 
                 /> 
-            </IconButton>
-            <IconButton className='buttons__favorite'>
-                <FavoriteIcon 
+            </IconButton> */}
+            <IconButton className='buttons__notInterested'>
+                <NotInterestedIcon 
                     fontSize='large' 
                 />
             </IconButton>
-            <IconButton className='buttons__notInterested'>
-                <NotInterestedIcon 
+            <IconButton className='buttons__favorite'>
+                <FavoriteIcon 
                     fontSize='large' 
                 />
             </IconButton>
