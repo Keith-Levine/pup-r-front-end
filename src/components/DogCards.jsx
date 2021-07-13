@@ -17,24 +17,29 @@ function DogCards() {
     const swiped = (direction, nameToDelete) => {
         console.log('removing: ' + nameToDelete)
         setLastDirection(direction)
+        console.log(direction)
     }
 
     const outOfFrame = (name) => {
         console.log(name + ' left the screen!')
     }
 
-    const childRefs = useMemo(() => Array(dogs.length).fill(0).map(i => React.createRef()), [dogs])
+    // const childRefs = useMemo(() => Array(dogs.length).fill(0).map(i => React.createRef()), [dogs.length])
 
     const swipe = (dir) => {
         const cardsLeft = dogs.filter(person => !alreadyRemoved.includes(person.name))
         if (cardsLeft.length) {
           const toBeRemoved = cardsLeft[cardsLeft.length - 1].name 
             // Find the card object to be removed
-          const index = dogs.map(dog => dog.name).indexOf(toBeRemoved) 
+        console.log(toBeRemoved)
+        //   const index = dogs.map(dog => dog.name).indexOf(toBeRemoved) 
             // Find the index of which to make the reference to
+            // console.log(index)
           alreadyRemoved.push(toBeRemoved) 
-            // Make sure the next card gets removed next time if this card do not have time to exit the screen
-          childRefs[index].current.swipe(dir) // Swipe the card!
+        //     // Make sure the next card gets removed next time if this card do not have time to exit the screen
+
+        //   toBeRemoved.current.swipe(dir) 
+            // Swipe the card
         }
       }
 
