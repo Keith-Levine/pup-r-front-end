@@ -37,8 +37,9 @@ function DogCards() {
             // console.log(index)
           alreadyRemoved.push(toBeRemoved) 
         //     // Make sure the next card gets removed next time if this card do not have time to exit the screen
+        console.log(alreadyRemoved)
 
-        //   toBeRemoved.current.swipe(dir) 
+        // toBeRemoved.current.swipe(dir) 
             // Swipe the card
         }
       }
@@ -64,7 +65,7 @@ function DogCards() {
                     key={dog.name}
                     preventSwipe={['up', 'down']}
                     onSwipe={(dir) => swiped(dir, dog.name)} 
-                    onCardLeftScreen={() => outOfFrame(dog.name)}
+                    onCardLeftScreen={() => swipe('right')}
                 >
                     <div 
                         style={{ backgroundImage: `url(${dog.url})`}}
@@ -89,6 +90,7 @@ function DogCards() {
             <IconButton 
                 className='buttons__favorite'
                 onClick={() => swipe('right')}
+                onCardLeftScreen={(e) => swipe(e)}
             >
                 <FavoriteIcon 
                     fontSize='large' 
