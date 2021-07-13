@@ -10,18 +10,22 @@ The objective of this project was to build a full stack application, using our s
 
 As a user, I should be able to create a profile for myself and my dog/s.
 
-As a user, I should be able to create a new recipe.
+As a user, I should be able to edit this profile.
 
-As a user, I should be able to update a recipe.
+As a user, I should be able to choose dogs i want to match with.
 
-As a user, I should be able to delete a recipe.
+As a user, I should be able to know when my dog matches wit someone else's.
+
+As a user, I should be able to communicate with my macthes. 
+
+As a user, I should be able to delete my matches. 
 
 <h2>App Link</h2>
 
-[Keke's Cooking Page](https://enigmatic-everglades-87572.herokuapp.com/)
+[Pup-r App](https://hidden-woodland-74236.herokuapp.com/)
 
 <h2>Stretch Goals</h2>
 
-Complete one to many relationships for searchability. 
+Add user messaging using socket.io
 
-Add admin login so recipes can only be edited or deleted by admin.
+Add photo upload for user/dog images.
