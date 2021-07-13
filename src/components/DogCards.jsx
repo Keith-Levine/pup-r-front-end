@@ -4,13 +4,23 @@ import database from './firebase';
 import './DogCards.css'
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import NotInterestedIcon from '@material-ui/icons/NotInterested';
-import ReplayIcon from '@material-ui/icons/Replay';
+// import ReplayIcon from '@material-ui/icons/Replay';
 import IconButton from '@material-ui/core/IconButton';
 
 
 
 function DogCards() {
     const [dogs, setDogs] = useState([]);
+    const [lastDirection, setLastDirection] = useState()
+
+    const swiped = (direction, nameToDelete) => {
+        console.log('removing: ' + nameToDelete)
+        setLastDirection(direction)
+    }
+
+    const outOfFrame = (name) => {
+        console.log(name + ' left the screen!')
+    }
 
     useEffect(() => {
         const unsubscribe = database
@@ -32,6 +42,8 @@ function DogCards() {
                     className='swipe'
                     key={dog.name}
                     preventSwipe={['up', 'down']}
+                    onSwipe={(dir) => swiped(dir, dog.name)} 
+                    onCardLeftScreen={() => outOfFrame(dog.name)}
                 >
                     <div 
                         style={{ backgroundImage: `url(${dog.url})`}}
