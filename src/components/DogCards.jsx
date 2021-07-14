@@ -82,7 +82,7 @@ function DogCards() {
                     fontSize='large' 
                 /> 
             </IconButton> */}
-            <IconButton className='buttons__notInterested'>
+            {/* <IconButton className='buttons__notInterested'>
                 <NotInterestedIcon 
                     fontSize='large' 
                 />
@@ -95,7 +95,7 @@ function DogCards() {
                 <FavoriteIcon 
                     fontSize='large' 
                 />
-            </IconButton>
+            </IconButton> */}
         </div>
         </div>
     )

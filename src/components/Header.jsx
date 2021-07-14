@@ -20,14 +20,14 @@ export default function Header({ backButton }) {
                 />
                 </IconButton>
             ): (
-                <Link to='/profileDemo'>
+                // <Link to='/profileDemo'>
                 <IconButton>
                     <AccountCircleIcon 
                         fontSize='large' 
                         className='header__icon'
                     />
                 </IconButton>
-                </Link>
+                // </Link>
             )}
             
             <Link to='/'>
