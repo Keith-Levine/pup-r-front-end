@@ -15,7 +15,7 @@ function Home() {
                     size="large"
                 >Demo</Button>
             </Link>
-            {/* <Link to='/register'>
+            <Link to='/register'>
                 <Button 
                     variant="contained" 
                     color="primary"
@@ -28,12 +28,7 @@ function Home() {
                     color="primary"
                     size="large"
                 >Login</Button>
-            </Link> */}
-                <Button 
-                    variant="contained" 
-                    color="primary"
-                    size="large"
-                >Full Site Coming Soon!</Button>
+            </Link>
         </div>
         {/* <div>
             <img src='https://i.imgur.com/dre7Pnj.png' alt='showPage' className='show__page'></img>
