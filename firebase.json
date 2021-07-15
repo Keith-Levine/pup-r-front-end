@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "firebase use --add pup-r-front-end",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
