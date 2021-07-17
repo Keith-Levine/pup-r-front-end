@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import TinderCard from 'react-tinder-card';
-import database from './firebase';
+import database from '../firebase';
 import './DogCards.css'
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import NotInterestedIcon from '@material-ui/icons/NotInterested';
+// import FavoriteIcon from '@material-ui/icons/Favorite';
+// import NotInterestedIcon from '@material-ui/icons/NotInterested';
 // import ReplayIcon from '@material-ui/icons/Replay';
-import IconButton from '@material-ui/core/IconButton';
+// import IconButton from '@material-ui/core/IconButton';
 
 
 

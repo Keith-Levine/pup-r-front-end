@@ -6,13 +6,13 @@ import {
   Route,
   // Link
 } from "react-router-dom";
-import DogCards from './components/DogCards';
+import DogCards from './components/DogCards/DogCards';
 import Home from './components/Home';
 import HomeHeader from './components/HomeHeader';
-import Register from './components/Register'
+import Register from './components/Register/Register'
 import LogIn from './components/LogIn';
-import Conversations from './components/Conversations';
-import ChatScreen from './components/ChatScreen'
+import Conversations from './components/Conversations/Conversations';
+import ChatScreen from './components/ChatScreen/ChatScreen'
 import ProfileDemo from './components/ProfileDemo'
 import './App.css';
 
