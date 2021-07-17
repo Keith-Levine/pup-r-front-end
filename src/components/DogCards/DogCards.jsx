@@ -1,17 +1,17 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import TinderCard from 'react-tinder-card';
-import database from '../firebase';
+import firebaseApp from '../firebase';
 import './DogCards.css'
-// import FavoriteIcon from '@material-ui/icons/Favorite';
+import FavoriteIcon from '@material-ui/icons/Favorite';
 // import NotInterestedIcon from '@material-ui/icons/NotInterested';
 // import ReplayIcon from '@material-ui/icons/Replay';
-// import IconButton from '@material-ui/core/IconButton';
+import IconButton from '@material-ui/core/IconButton';
 
-
+const database = firebaseApp.firestore()
 
 function DogCards() {
-    const alreadyRemoved = []
-    const [dogs, setDogs] = useState([]);
+    const alreadyVotedOnDogs = []
+    const [allDogs, setallDogs] = useState([]);
     const [lastDirection, setLastDirection] = useState()
 
     const swiped = (direction, nameToDelete) => {
@@ -20,27 +20,27 @@ function DogCards() {
         console.log(direction)
     }
 
-    const outOfFrame = (name) => {
-        console.log(name + ' left the screen!')
-    }
+    // const outOfFrame = (name) => {
+    //     console.log(name + ' left the screen!')
+    // }
 
-    // const childRefs = useMemo(() => Array(dogs.length).fill(0).map(i => React.createRef()), [dogs.length])
+    const childRefs = useMemo(() => Array(allDogs.length).fill(0).map(i => React.createRef()), [allDogs.length])
 
     const swipe = (dir) => {
-        const cardsLeft = dogs.filter(person => !alreadyRemoved.includes(person.name))
-        if (cardsLeft.length) {
-          const toBeRemoved = cardsLeft[cardsLeft.length - 1].name 
+        const remainingDogs = allDogs.filter(dog => !alreadyVotedOnDogs.includes(dog.name))
+        if (remainingDogs.length) {
+          const currentDog = remainingDogs[remainingDogs.length - 1] 
             // Find the card object to be removed
-        console.log(toBeRemoved)
-        //   const index = dogs.map(dog => dog.name).indexOf(toBeRemoved) 
+        console.log('voting on dog: ', currentDog.name)
+        //   const index = allDogs.map(dog => dog.name).indexOf(currentDog) 
             // Find the index of which to make the reference to
             // console.log(index)
-          alreadyRemoved.push(toBeRemoved) 
+          alreadyVotedOnDogs.push(currentDog) 
         //     // Make sure the next card gets removed next time if this card do not have time to exit the screen
-        console.log(alreadyRemoved)
 
-        // toBeRemoved.current.swipe(dir) 
-            // Swipe the card
+        console.log(currentDog.current)
+        currentDog.swipe(dir) 
+           
         }
       }
 
@@ -48,7 +48,7 @@ function DogCards() {
         const unsubscribe = database
             .collection('dogs')
             .onSnapshot(snapshot => (
-                setDogs(snapshot.docs.map(doc => doc.data()))
+                setallDogs(snapshot.docs.map(doc => doc.data()))
             ));
 
         return () => {
@@ -59,7 +59,7 @@ function DogCards() {
     return (
         <div>
             <div className="dogCards__cardContainer">
-            {dogs.map(dog => (
+            {allDogs.map(dog => (
                 <TinderCard
                     className='swipe'
                     key={dog.name}
@@ -86,7 +86,7 @@ function DogCards() {
                 <NotInterestedIcon 
                     fontSize='large' 
                 />
-            </IconButton>
+            </IconButton> */}
             <IconButton 
                 className='buttons__favorite'
                 onClick={() => swipe('right')}
@@ -95,7 +95,7 @@ function DogCards() {
                 <FavoriteIcon 
                     fontSize='large' 
                 />
-            </IconButton> */}
+            </IconButton>
         </div>
         </div>
     )
