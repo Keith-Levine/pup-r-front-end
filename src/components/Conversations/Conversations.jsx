@@ -1,39 +1,43 @@
 import React from 'react'
+<<<<<<< HEAD:src/components/Conversations/Conversations.jsx
 import Chat from '../Chat/Chat'
+=======
+import ChatDemo from './ChatDemo'
+>>>>>>> 2cdd4c5c4212c90cdcad376156d2f4f2926f29e1:src/components/Conversations.jsx
 import './Conversations.css'
 
 function Conversations() {
     return (
         <div className='conversations'>
-            <Chat 
+            <ChatDemo 
                 name='Haley & Atlas'
                 message='Hey!'
                 timestamp='just now'
                 dogPic='https://i.imgur.com/NofaRy8.jpg'
                 profilePic='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbtnTcfzD1zMtyOuNPMRTGPNZcFbHOD5VhMQ&usqp=CAU'
             />
-            <Chat 
+            <ChatDemo 
                 name='Anna & Cooper'
                 message='See you then'
                 timestamp='12:17 PM'
                 dogPic='https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/02/322868_1100-800x825.jpg'
                 profilePic='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVcq37viCpKeAfQazaZ_43B8AVY66IAuLZNg&usqp=CAU'
             />
-            <Chat 
+            <ChatDemo 
                 name='Kristy & Ryder'
                 message='So cute'
                 timestamp='11:05 AM'
                 dogPic='https://highlandcanine.com/wp-content/uploads/2021/01/siberian-husky-in-the-snow.jpg'
                 profilePic='https://image.flaticon.com/icons/png/512/146/146005.png'
             />
-            <Chat 
+            <ChatDemo 
                 name='Laura & Angel'
                 message="that's close to me"
                 timestamp='yesterday'
                 dogPic='https://www.petmd.com/sites/default/files/2020-11/picture-of-golden-retriever-dog_0.jpg'
                 profilePic='https://st2.depositphotos.com/3557671/11465/v/950/depositphotos_114656902-stock-illustration-girl-icon-cartoon-single-avatarpeaople.jpg'
             />
-            <Chat 
+            <ChatDemo
                 name='Becca & Koda'
                 message='What a long hike'
                 timestamp='1w'

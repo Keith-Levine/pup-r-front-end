@@ -1,15 +1,19 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect } from 'react';
 import TinderCard from 'react-tinder-card';
 import firebaseApp from '../firebase';
 import './DogCards.css'
+<<<<<<< HEAD:src/components/DogCards/DogCards.jsx
 import FavoriteIcon from '@material-ui/icons/Favorite';
 // import NotInterestedIcon from '@material-ui/icons/NotInterested';
 // import ReplayIcon from '@material-ui/icons/Replay';
 import IconButton from '@material-ui/core/IconButton';
+=======
+>>>>>>> 2cdd4c5c4212c90cdcad376156d2f4f2926f29e1:src/components/DogCards.jsx
 
 const database = firebaseApp.firestore()
 
 function DogCards() {
+<<<<<<< HEAD:src/components/DogCards/DogCards.jsx
     const alreadyVotedOnDogs = []
     const [allDogs, setallDogs] = useState([]);
     const [lastDirection, setLastDirection] = useState()
@@ -43,6 +47,9 @@ function DogCards() {
            
         }
       }
+=======
+    const [dogs, setDogs] = useState([]);
+>>>>>>> 2cdd4c5c4212c90cdcad376156d2f4f2926f29e1:src/components/DogCards.jsx
 
     useEffect(() => {
         const unsubscribe = database
@@ -64,8 +71,6 @@ function DogCards() {
                     className='swipe'
                     key={dog.name}
                     preventSwipe={['up', 'down']}
-                    onSwipe={(dir) => swiped(dir, dog.name)} 
-                    onCardLeftScreen={() => swipe('right')}
                 >
                     <div 
                         style={{ backgroundImage: `url(${dog.url})`}}
@@ -76,6 +81,7 @@ function DogCards() {
                 </TinderCard>
             ))}
             </div>
+<<<<<<< HEAD:src/components/DogCards/DogCards.jsx
             <div className='buttons'>
             {/* <IconButton className='buttons__replay'>
                 <ReplayIcon 
@@ -97,6 +103,8 @@ function DogCards() {
                 />
             </IconButton>
         </div>
+=======
+>>>>>>> 2cdd4c5c4212c90cdcad376156d2f4f2926f29e1:src/components/DogCards.jsx
         </div>
     )
 }
