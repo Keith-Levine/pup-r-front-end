@@ -3,7 +3,7 @@ import TinderCard from 'react-tinder-card';
 import database from './firebase';
 import './DogCards.css'
 import FavoriteIcon from '@material-ui/icons/Favorite';
-import NotInterestedIcon from '@material-ui/icons/NotInterested';
+// import NotInterestedIcon from '@material-ui/icons/NotInterested';
 // import ReplayIcon from '@material-ui/icons/Replay';
 import IconButton from '@material-ui/core/IconButton';
 
@@ -86,7 +86,7 @@ function DogCards() {
                 <NotInterestedIcon 
                     fontSize='large' 
                 />
-            </IconButton>
+            </IconButton> */}
             <IconButton 
                 className='buttons__favorite'
                 onClick={() => swipe('right')}
@@ -95,7 +95,7 @@ function DogCards() {
                 <FavoriteIcon 
                     fontSize='large' 
                 />
-            </IconButton> */}
+            </IconButton>
         </div>
         </div>
     )
