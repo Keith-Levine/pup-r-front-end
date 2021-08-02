@@ -25,20 +25,23 @@ function DogCards() {
     }
 
     // const childRefs = useMemo(() => Array(dogs.length).fill(0).map(i => React.createRef()), [dogs.length])
+    const childRefs = useMemo(() => Array(database.length).fill(0).map(i => React.createRef()), [])
 
     const swipe = (dir) => {
-        const cardsLeft = dogs.filter(person => !alreadyRemoved.includes(person.name))
+        const cardsLeft = dogs.filter(dog => !alreadyRemoved.includes(dog.name))
         if (cardsLeft.length) {
           const toBeRemoved = cardsLeft[cardsLeft.length - 1].name 
             // Find the card object to be removed
         console.log(toBeRemoved)
+        const index = dogs.map(dog => dog.name).indexOf(toBeRemoved)
         //   const index = dogs.map(dog => dog.name).indexOf(toBeRemoved) 
             // Find the index of which to make the reference to
             // console.log(index)
           alreadyRemoved.push(toBeRemoved) 
         //     // Make sure the next card gets removed next time if this card do not have time to exit the screen
         console.log(alreadyRemoved)
-
+        console.log(childRefs)
+        childRefs[index].swipe(dir)
         // toBeRemoved.current.swipe(dir) 
             // Swipe the card
         }
