@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import TinderCard from 'react-tinder-card';
-import database from './firebase';
+import firebaseApp from './firebase';
 import './DogCards.css'
 
-
+const database = firebaseApp.firestore();
 
 function DogCards() {
     const [dogs, setDogs] = useState([]);
