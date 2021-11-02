@@ -23,9 +23,3 @@ As a user, I should be able to delete my matches.
 <h2>App Link</h2>
 
 [Pup-r App](https://hidden-woodland-74236.herokuapp.com/)
-
-<h2>Stretch Goals</h2>
-
-Add user messaging using socket.io
-
-Add photo upload for user/dog images.
